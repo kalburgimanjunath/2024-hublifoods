@@ -4,13 +4,15 @@ import { Back } from "../components";
 import { useParams } from "react-router";
 import { incremented } from "../store/counterSlice";
 import { useDispatch } from "react-redux";
+import { useReducer } from "react";
 export default function ProductWise() {
   let { id } = useParams();
+  const count = useReducer((state) => state.counter);
   const dispatch = useDispatch();
-
   return (
     <div>
       <Back title={id} />
+      {count}
       <div className="grid grid-cols-2">
         <div className="p-5">
           <img src={PRODUCTS[0].url} width={"80%"} />
