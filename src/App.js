@@ -1,10 +1,17 @@
 import "./styles.css";
-
+import { Routes, Route } from "react-router-dom";
+import { CategoryWise, Home } from "./pages";
+import { Footer, Header } from "./components";
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category/:id" element={<CategoryWise />} />
+        <Route path="/products/:id" element={<ProductWise />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
