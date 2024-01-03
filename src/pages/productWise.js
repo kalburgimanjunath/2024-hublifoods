@@ -1,24 +1,17 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { PRODUCTS } from "../data/productlist";
+import { Back } from "../components";
 export default function ProductWise() {
   return (
     <div>
-      <div>Back to List</div>
+      <Back title="Products" />
       <div>
-        {PRODUCTS &&
-          PRODUCTS.map((item, index) => {
-            return (
-              <Link
-                key={item.title + index}
-                to={`../../../products/${item.title}`}
-              >
-                <div>
-                  <img src={item.url} />
-                </div>
-                <div>{item.title}</div>
-              </Link>
-            );
-          })}
+        <div>
+          <img src={PRODUCTS[0].url} />
+        </div>
+        <div>{PRODUCTS[0].title}</div>
+        <div>Share to Social Media</div>
+        <div>Add to Favorite</div>
       </div>
     </div>
   );

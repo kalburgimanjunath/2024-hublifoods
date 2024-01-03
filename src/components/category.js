@@ -19,19 +19,25 @@ export default function Cateogry() {
     },
   ];
   return (
-    <div>
+    <div className="p-2 text-left text-2xl">
       <h3>Categories</h3>
-      {category &&
-        category.map((item, index) => {
-          return (
-            <Link key={index + item.title} to={`/category/:${item.title}`}>
-              <div>
-                <img src={item.url} />
-              </div>
-              <div>{item.title}</div>
-            </Link>
-          );
-        })}
+      <div className="flex">
+        {category &&
+          category.map((item, index) => {
+            return (
+              <Link
+                className="text-sm text-center items-center p-2 m-2 border rounded-md"
+                key={index + item.title}
+                to={`/category/:${item.title}`}
+              >
+                <div>
+                  <img src={item.url} width={70} />
+                </div>
+                <div className="text-sm">{item.title}</div>
+              </Link>
+            );
+          })}
+      </div>
     </div>
   );
 }

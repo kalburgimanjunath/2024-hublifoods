@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <Banner />
       <Category />
-      <Products products={PRODUCTS} title="discounted" />
+      <Products products={PRODUCTS} title="discounted %" />
     </div>
   );
 }

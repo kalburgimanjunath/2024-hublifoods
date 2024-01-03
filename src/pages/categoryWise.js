@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { PRODUCTS } from "../data/productlist";
+import { Back, Products } from "../components";
 export default function CategoryWise() {
   return (
     <div>
-      <div>Back to List</div>
+      <Back title="Category" />
       <div>
-        {PRODUCTS &&
+        <Products products={PRODUCTS} title="" />
+        {/* {PRODUCTS &&
           PRODUCTS.map((item, index) => {
             return (
               <Link
@@ -18,7 +20,7 @@ export default function CategoryWise() {
                 <div>{item.title}</div>
               </Link>
             );
-          })}
+          })} */}
       </div>
     </div>
   );

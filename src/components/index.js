@@ -3,4 +3,5 @@ import Footer from "./footer";
 import Banner from "./banner";
 import Category from "./category";
 import Products from "./products";
-export { Header, Footer, Banner, Category, Products };
+import Back from "./back";
+export { Header, Footer, Banner, Category, Products, Back };
