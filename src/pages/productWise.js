@@ -2,8 +2,12 @@
 import { PRODUCTS } from "../data/productlist";
 import { Back } from "../components";
 import { useParams } from "react-router";
+import { incremented } from "../store/counterSlice";
+import { useDispatch } from "react-redux";
 export default function ProductWise() {
   let { id } = useParams();
+  const dispatch = useDispatch();
+
   return (
     <div>
       <Back title={id} />
@@ -67,7 +71,11 @@ export default function ProductWise() {
               {PRODUCTS[0].discount} Rs.
             </div>
             <div className="text-orange-600 w-full text-2xl">110 Rs.</div>
-            <button className="cart-button mt-4" type="button uppercase">
+            <button
+              className="cart-button mt-4"
+              type="button uppercase"
+              onClick={() => dispatch(incremented())}
+            >
               Add to Cart
             </button>
           </div>
