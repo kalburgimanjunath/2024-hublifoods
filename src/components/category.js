@@ -28,7 +28,7 @@ export default function Cateogry() {
               <Link
                 className="text-sm text-center items-center p-2 m-2 border rounded-md"
                 key={index + item.title}
-                to={`/category/:${item.title}`}
+                to={`/category/${item.title}`}
               >
                 <div>
                   <img src={item.url} width={70} />

@@ -1,16 +1,18 @@
 // import { Link } from "react-router-dom";
 import { PRODUCTS } from "../data/productlist";
 import { Back } from "../components";
+import { useParams } from "react-router";
 export default function ProductWise() {
+  let { id } = useParams();
   return (
     <div>
-      <Back title="Products" />
+      <Back title={id} />
       <div className="grid grid-cols-2">
         <div className="p-5">
           <img src={PRODUCTS[0].url} width={"80%"} />
         </div>
         <div className="p-4 text-left">
-          <div className="flex justify-between w-full">
+          <div className="flex justify-between w-full items-center mt-10">
             <div className="font-bold text-2xl">{PRODUCTS[0].title}</div>
             <div className="flex justify-end">
               <svg
@@ -44,6 +46,30 @@ export default function ProductWise() {
                 />
               </svg>
             </div>
+          </div>
+          <div className="flex justify-center w-full items-center mt-5 border-t-2  m-5">
+            <button
+              className="flex mt-4 p-4 rounded-lg border-2 text-orange-600 border-orange-600  text-2xl"
+              type="button"
+            >
+              -
+            </button>
+            <span>Quantity</span>
+            <button
+              className="flex mt-4 p-4 rounded-lg border-2 text-orange-600 border-orange-600  text-2xl"
+              type="button"
+            >
+              +
+            </button>
+          </div>
+          <div className="flex justify-end w-full flex-wrap text-right mt-5 border-t-2 border-b-2 m-5">
+            <div className="text-orange-600 line-through w-full">
+              {PRODUCTS[0].discount} Rs.
+            </div>
+            <div className="text-orange-600 w-full text-2xl">110 Rs.</div>
+            <button className="cart-button mt-4" type="button uppercase">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

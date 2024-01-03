@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Back({ title }) {
   return (
-    <div className="fixed top-0 p-3 w-full bg-orange-600 text-white shadow-lg">
+    <div className="fixed top-0 p-2 m-1  w-96 bg-orange-600 text-white shadow-lg">
       <Link to="/" className="flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"

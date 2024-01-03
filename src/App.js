@@ -4,7 +4,7 @@ import { CategoryWise, ProductWise, Home, About } from "./pages";
 import { Footer, Header } from "./components";
 export default function App() {
   return (
-    <div className="App">
+    <div className="mx-20">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
