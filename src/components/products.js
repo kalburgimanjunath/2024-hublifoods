@@ -22,6 +22,22 @@ export default function Products({ products, title }) {
                   />
                 </div>
                 <div className="font-bold">{item.title}</div>
+                <div className="flex">
+                  <div className="text-orange-600  line-through">
+                    {item.price} Rs.
+                  </div>
+                  <div className="text-orange-600">
+                    {item.price - item.discount} Rs.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    className="border-orange-600 text-orange-600 border-2 rounded-md p-1 w-full"
+                    type="button uppercase"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </Link>
             );
           })}
