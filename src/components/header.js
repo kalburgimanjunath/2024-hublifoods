@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 export default function Header() {
+  const cart = useSelector((state) => state.cart);
   const rightnav = [
     {
       title: "info",
@@ -23,7 +25,7 @@ export default function Header() {
     },
     {
       title: "Favarite",
-      url: "fav",
+      url: "watchlist",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +124,19 @@ export default function Header() {
                   className="p-2 hover:text-blue-600"
                   key={`rightnav-${item.title}-${index}`}
                 >
-                  {/* {item.title.toUpperCase()} */}
+                  {item.title == "cart" ? (
+                    <div
+                      className="text-center items-center absolute bg-blue-600 rounded-lg hover:text-white"
+                      style={{
+                        top: "4px",
+                        marginLeft: "10px",
+                        height: "22px",
+                        width: "22px",
+                      }}
+                    >
+                      <span className="text-white">{cart.length}</span>
+                    </div>
+                  ) : null}
                   <span>{item.icon}</span>
                 </Link>
               );

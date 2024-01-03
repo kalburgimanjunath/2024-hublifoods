@@ -2,4 +2,6 @@ import Home from "./home";
 import CategoryWise from "./categoryWise";
 import ProductWise from "./productWise";
 import About from "./about";
-export { Home, CategoryWise, ProductWise, About };
+import Cart from "./cart";
+import WatchList from "./watchlist";
+export { Home, CategoryWise, ProductWise, About, Cart, WatchList };

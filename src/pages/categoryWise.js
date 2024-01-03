@@ -10,20 +10,6 @@ export default function CategoryWise() {
       <Back title={id} />
       <div>
         <Products products={PRODUCTS} title="" />
-        {/* {PRODUCTS &&
-          PRODUCTS.map((item, index) => {
-            return (
-              <Link
-                key={item.title + index}
-                to={`../../../products/${item.title}`}
-              >
-                <div>
-                  <img src={item.url} />
-                </div>
-                <div>{item.title}</div>
-              </Link>
-            );
-          })} */}
       </div>
     </div>
   );

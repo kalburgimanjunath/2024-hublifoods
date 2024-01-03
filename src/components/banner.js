@@ -41,7 +41,11 @@ export default function Banner() {
       <div
         className="cursor-pointer"
         style={{ display: banners.length > 0 ? "block" : "none" }}
-        onClick={() => setActiveItem(activeItem + 1)}
+        onClick={() => {
+          if (activeItem < banners.length) {
+            setActiveItem(activeItem + 1);
+          }
+        }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

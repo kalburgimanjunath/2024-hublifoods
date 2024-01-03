@@ -2,17 +2,18 @@
 import { PRODUCTS } from "../data/productlist";
 import { Back } from "../components";
 import { useParams } from "react-router";
-import { incremented } from "../store/counterSlice";
-import { useDispatch } from "react-redux";
-import { useReducer } from "react";
+import { incremented, decremented } from "../store/counterSlice";
+import { addWishItem } from "../store/watchlistSlice";
+import { addItem } from "../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+// import { useReducer } from "react";
 export default function ProductWise() {
   let { id } = useParams();
-  const count = useReducer((state) => state.counter);
+  const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
   return (
     <div>
-      <Back title={id} />
-      {count}
+      <Back title={id + count} />
       <div className="grid grid-cols-2">
         <div className="p-5">
           <img src={PRODUCTS[0].url} width={"80%"} />
@@ -36,7 +37,7 @@ export default function ProductWise() {
                 />
               </svg>
             </div>
-            <div>
+            <div onClick={() => dispatch(addWishItem(PRODUCTS[0]))}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -57,6 +58,7 @@ export default function ProductWise() {
             <button
               className="flex mt-4 p-4 rounded-lg border-2 text-orange-600 border-orange-600  text-2xl"
               type="button"
+              onClick={() => dispatch(decremented())}
             >
               -
             </button>
@@ -64,6 +66,7 @@ export default function ProductWise() {
             <button
               className="flex mt-4 p-4 rounded-lg border-2 text-orange-600 border-orange-600  text-2xl"
               type="button"
+              onClick={() => dispatch(incremented())}
             >
               +
             </button>
@@ -76,7 +79,7 @@ export default function ProductWise() {
             <button
               className="cart-button mt-4"
               type="button uppercase"
-              onClick={() => dispatch(incremented())}
+              onClick={() => dispatch(addItem(PRODUCTS[0]))}
             >
               Add to Cart
             </button>

@@ -8,3 +8,18 @@
 .cart-button {
   @apply border-orange-600 text-orange-600 border-2 rounded-md p-1 w-full;
 }
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
