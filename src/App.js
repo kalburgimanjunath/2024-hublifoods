@@ -11,6 +11,7 @@ import {
   Register,
   Signin,
   UserProfile,
+  Commondity,
 } from "./pages";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Footer, Header } from "./components";
@@ -28,6 +29,7 @@ export default function App() {
         >
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/commodity" element={<Commondity />} />
             <Route path="/login" element={<Signin />} />
             <Route path="/register" element={<Register />} />
             <Route path="/account" element={<UserProfile />} />

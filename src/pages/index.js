@@ -7,7 +7,9 @@ import WatchList from "./watchlist";
 import Signin from "./signin";
 import Register from "./registration";
 import UserProfile from "./userProfile";
+import Commondity from "./commodity";
 export {
+  Commondity,
   Signin,
   Register,
   UserProfile,
