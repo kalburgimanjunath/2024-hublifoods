@@ -8,6 +8,9 @@ import {
   About,
   Cart,
   WatchList,
+  Register,
+  Signin,
+  UserProfile,
 } from "./pages";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Footer, Header } from "./components";
@@ -15,7 +18,7 @@ import { useLocation } from "react-router-dom";
 export default function App() {
   const location = useLocation();
   return (
-    <div className="mx-20">
+    <div className="mx-20 sx:mx-10">
       <Header />
       <TransitionGroup>
         <CSSTransition
@@ -25,6 +28,9 @@ export default function App() {
         >
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Signin />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/account" element={<UserProfile />} />
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/watchlist" element={<WatchList />} />

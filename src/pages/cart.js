@@ -75,9 +75,9 @@ export default function Cart() {
         )}
       </div>
       <h3 className="mt-4 pb-4 border-b-2 font-bold">Payment Details</h3>
-      <div className="mt-4 pb-4 border-b-2 font-bold">
+      <div className="mt-4 pb-4 border-b-2 font-bold flex justify-between">
         <span>Total:</span>
-        <span>{sumTotal} Rs.</span>
+        <span className="text-right">{sumTotal} Rs.</span>
       </div>
       <div className="mt-4 pb-4 border-b-2 flex justify-between">
         <span>Cash on Delivery</span>

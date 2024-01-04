@@ -31,4 +31,20 @@ export const PRODUCTS = [
     discount: 8,
     url: "https://cdn.mobilzer.com/food-app/products/b2cda49b-0978-48e0-9d9d-ababe2eb56b7/826b9b54-deb5-4380-9db0-6d89ba2b125b.png?ts=1681016635",
   },
+  {
+    id: 5,
+    title: "Kheema",
+    price: 200,
+    category: "savji juman",
+    discount: 5,
+    url: "https://cdn.mobilzer.com/food-app/products/b2cda49b-0978-48e0-9d9d-ababe2eb56b7/826b9b54-deb5-4380-9db0-6d89ba2b125b.png?ts=1681016635",
+  },
+  {
+    id: 6,
+    title: "Chicken ticca",
+    price: 250,
+    category: "savji juman",
+    discount: 5,
+    url: "https://cdn.mobilzer.com/food-app/products/b2cda49b-0978-48e0-9d9d-ababe2eb56b7/826b9b54-deb5-4380-9db0-6d89ba2b125b.png?ts=1681016635",
+  },
 ];
