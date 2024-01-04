@@ -6,7 +6,7 @@ import { incremented, decremented } from "../store/counterSlice";
 import { addWishItem } from "../store/watchlistSlice";
 import { addItem } from "../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-// import { useReducer } from "react";
+import * as alertify from "alertifyjs";
 export default function ProductWise() {
   let { id } = useParams();
   const count = useSelector((state) => state.counter.value);
@@ -37,7 +37,13 @@ export default function ProductWise() {
                 />
               </svg>
             </div>
-            <div onClick={() => dispatch(addWishItem(PRODUCTS[0]))}>
+            <div
+              className="cursor-pointer"
+              onClick={() => {
+                dispatch(addWishItem(PRODUCTS[0]));
+                alertify.success("Item added into Wishlist...");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -79,7 +85,10 @@ export default function ProductWise() {
             <button
               className="cart-button mt-4"
               type="button uppercase"
-              onClick={() => dispatch(addItem(PRODUCTS[0]))}
+              onClick={() => {
+                dispatch(addItem(PRODUCTS[0]));
+                alertify.success("Item added into Cart...");
+              }}
             >
               Add to Cart
             </button>

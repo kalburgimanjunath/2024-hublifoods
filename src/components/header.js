@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 export default function Header() {
   const cart = useSelector((state) => state.cart);
+  const watchlist = useSelector((state) => state.watchlist);
   const rightnav = [
     {
       title: "info",
@@ -135,6 +136,19 @@ export default function Header() {
                       }}
                     >
                       <span className="text-white">{cart.length}</span>
+                    </div>
+                  ) : null}
+                  {item.title == "Favarite" ? (
+                    <div
+                      className="text-center items-center absolute bg-blue-600 rounded-lg hover:text-white"
+                      style={{
+                        top: "4px",
+                        marginLeft: "10px",
+                        height: "22px",
+                        width: "22px",
+                      }}
+                    >
+                      <span className="text-white">{watchlist.length}</span>
                     </div>
                   ) : null}
                   <span>{item.icon}</span>

@@ -1,14 +1,31 @@
 import { Link } from "react-router-dom";
 import { remoteItem } from "../store/cartSlice";
 import { useDispatch } from "react-redux";
-export default function Products({ products, title, type }) {
+import { useState, useEffect } from "react";
+export default function Products({ products, title, type, filter }) {
   const dispatch = useDispatch();
+  const [filteredData, setFilterData] = useState([]);
+  const filterProducts = (filter) => {
+    return (
+      products &&
+      products.filter((item) => {
+        return item && item.category.toLowerCase() == filter.toLowerCase();
+      })
+    );
+  };
+  useEffect(() => {
+    if (filter) {
+      return setFilterData(filterProducts(filter));
+    } else {
+      return setFilterData(products);
+    }
+  }, [filter]);
   return (
     <div>
       {title && <h3 className="text-2xl capitalize text-left m-2">{title}</h3>}
       <div className="flex justify-center flex-wrap">
-        {products &&
-          products.map((item, index) => {
+        {filteredData &&
+          filteredData.map((item, index) => {
             return (
               <Link
                 key={index + item.title}

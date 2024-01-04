@@ -1,5 +1,6 @@
 import "./styles.css";
 import { Routes, Route } from "react-router-dom";
+import "alertifyjs/build/css/alertify.css";
 import {
   CategoryWise,
   ProductWise,

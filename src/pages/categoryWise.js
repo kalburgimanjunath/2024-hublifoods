@@ -9,7 +9,7 @@ export default function CategoryWise() {
     <div>
       <Back title={id} />
       <div>
-        <Products products={PRODUCTS} title="" />
+        <Products products={PRODUCTS} title="" filter={id} />
       </div>
     </div>
   );

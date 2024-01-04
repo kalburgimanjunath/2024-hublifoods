@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import { Back, Products } from "../components";
 import useRazorpay from "react-razorpay";
 import * as alertify from "alertifyjs";
-import "alertifyjs/build/css/alertify.css";
+
 export default function Cart() {
   const [sumTotal, setSumTotal] = useState(0);
   const [Razorpay] = useRazorpay();
   const handlePayment = useCallback(async () => {
     const options = {
       key: "rzp_test_XDZYohVji5WV7J",
-      amount: "1000",
+      amount: sumTotal > 100 ? sumTotal : 10000,
       currency: "INR",
       isUPILinkEnabled: true,
       name: "HubliFoods app",
