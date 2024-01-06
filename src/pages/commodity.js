@@ -1,7 +1,45 @@
 import { useState, useEffect } from "react";
 
 export default function Commondity() {
-  const allStates = ["Karnataka", "Andhra Pradesh", "Bihar", "Chandigarh"];
+  const allStates = [
+    "Andaman and Nicobar Islands",
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chandigarh",
+    "Chhattisgarh",
+    "Dadra and Nagar Haveli",
+    "Daman and Diu",
+    "Delhi",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jammu and Kashmir",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Ladakh",
+    "Lakshadweep",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Puducherry",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
+  ];
   const [states, setState] = useState();
   const [selectedState, setSelectedState] = useState("Karnataka");
   const API_URL = `https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&limit=200&filters%5Bstate%5D=${selectedState}`;
@@ -17,11 +55,10 @@ export default function Commondity() {
     const form = new FormData();
     form.append("prompt", name);
 
-    fetch("https://clipdrop-api.co/text-to-image/v1", {
+    fetch("https://stablediffusionapi.com/api/v3/text2img", {
       method: "POST",
       headers: {
-        "x-api-key":
-          "36d35b4a5e80f429edccaa935175221d9fc2f31f3fd8050880e2afaadbd806bee6f575c9580a2eb68322ae3ed48e5c28",
+        key: "DrLIE1kF9ogOEEJp1JfxrzG5PuYrnnBAQ9htQ4lYxXMqa4xDJplSzBxNsyBO",
       },
       body: form,
     })
@@ -44,9 +81,13 @@ export default function Commondity() {
       <div>
         <div>
           <h3>Commondity</h3>
-          {imageURL && <img width={200} />}
+          {/* https://stablediffusionapi.com/playground */}
+          {imageURL && <img width={200} src={imageURL} />}
           <div>
-            <select onChange={(e) => setSelectedState(e.target.value)}>
+            <select
+              onChange={(e) => setSelectedState(e.target.value)}
+              value={selectedState}
+            >
               {states &&
                 states.map((item) => {
                   return (
