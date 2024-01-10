@@ -8,8 +8,10 @@ import Signin from "./signin";
 import Register from "./registration";
 import UserProfile from "./userProfile";
 import Commondity from "./commodity";
+import MarketPlace from "./marketplace";
 export {
   Commondity,
+  MarketPlace,
   Signin,
   Register,
   UserProfile,
