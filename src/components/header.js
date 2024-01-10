@@ -145,7 +145,7 @@ export default function Header() {
                   className="p-2 hover:text-blue-600"
                   key={`rightnav-${item.title}-${index}`}
                 >
-                  {item.title == "cart" ? (
+                  {item.title == "cart" && cart.length > 0 ? (
                     <div
                       className="text-center items-center absolute bg-blue-600 rounded-lg hover:text-white"
                       style={{
@@ -158,7 +158,7 @@ export default function Header() {
                       <span className="text-white">{cart.length}</span>
                     </div>
                   ) : null}
-                  {item.title == "Favarite" ? (
+                  {item.title == "Favarite" && watchlist.length > 0 ? (
                     <div
                       className="text-center items-center absolute bg-blue-600 rounded-lg hover:text-white"
                       style={{
